@@ -1,6 +1,8 @@
 import React from "react";
 
-const HelloWorld = () => <h1>Hello World!</h1>;
+function HelloWorld() {
+  return <h1>Hello Wold!</h1>;
+}
 
 const App = () => (
   <div>
