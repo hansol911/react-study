@@ -1,9 +1,11 @@
 import React from "react";
-import HelloWorld from "./HelloWorld";
+import StyleCard from "./components/StyleCard";
+import CssModuleCard from "./components/CssModuleCard";
 
 const App = () => (
   <div>
-    <HelloWorld />
+    <StyleCard />
+    <CssModuleCard />
   </div>
 );
 
