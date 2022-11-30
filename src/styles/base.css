@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Jua:400");
+@import url("https://fonts.googleapis.com/css?family=Gothic+A1:400,700");
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#root {
+  height: 100%;
+}
