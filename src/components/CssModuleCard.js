@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
-import classes from "./CssModuleCard.module.css";
+import classes from "./CssModuleCard.module.scss";
 
 console.log(classes);
 

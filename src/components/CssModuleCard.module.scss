@@ -1,0 +1,98 @@
+$border-color: #dee2e6;
+$max-width: 360px;
+$default-gap: 16px;
+
+.box {
+  max-width: 360px;
+  border-radius: calc($default-gap / 2);
+  border: 1px solid $border-color;
+  overflow: hidden;
+
+  figure {
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 189px;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: $default-gap;
+    margin: $default-gap;
+
+    h3 {
+      flex: 1;
+      margin: 0;
+      font-size: 20px;
+      font-family: "Jua";
+    }
+
+    .chip {
+      padding: 0 10px;
+      border-radius: 32px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 22px;
+      background-color: #e7f5ff;
+      color: #228be6;
+    }
+  }
+
+  .summary {
+    margin: $default-gap;
+    line-height: 1.666;
+    color: #000000cc;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+    gap: $default-gap;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding: calc($default-gap / 2) $default-gap $default-gap $default-gap;
+    border-top: 1px solid $border-color;
+
+    .button.btn-details {
+      flex: 1;
+    }
+    .button.btn-favorite {
+      flex: 0 0 auto;
+      width: 36px;
+      padding: 0px;
+      color: #fa5252;
+      font-size: 18px;
+    }
+  }
+}
+
+.button {
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0px $default-gap;
+  border: 1px solid transparent;
+  border-radius: calc($default-gap / 2);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+
+  &.primary {
+    background-color: #228be6;
+    color: #ffffff;
+  }
+  &.default {
+    border-color: #ced4da;
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
