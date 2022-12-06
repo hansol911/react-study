@@ -1,3 +1,5 @@
+@use "../styles/button" as btn;
+
 $border-color: #dee2e6;
 $max-width: 360px;
 $default-gap: 16px;
@@ -73,26 +75,5 @@ $default-gap: 16px;
 }
 
 .button {
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-  padding: 0px $default-gap;
-  border: 1px solid transparent;
-  border-radius: calc($default-gap / 2);
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-
-  &.primary {
-    background-color: #228be6;
-    color: #ffffff;
-  }
-  &.default {
-    border-color: #ced4da;
-    background-color: #ffffff;
-    color: #000000;
-  }
+  @include btn.button;
 }
