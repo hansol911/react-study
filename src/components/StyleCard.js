@@ -33,7 +33,7 @@ const StyleCard = () => (
         자세히 보기
       </a>
       <button
-        type="bytton"
+        type="button"
         className="button default btn-favorite"
         style={styles.btnFavorite}
         title="좋아요"
