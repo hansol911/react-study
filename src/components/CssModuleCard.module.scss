@@ -62,9 +62,11 @@ $default-gap: 16px;
     border-top: 1px solid $border-color;
 
     .button.btn-details {
+      @include btn.button(primary);
       flex: 1;
     }
     .button.btn-favorite {
+      @include btn.button(default);
       flex: 0 0 auto;
       width: 36px;
       padding: 0px;
@@ -72,8 +74,4 @@ $default-gap: 16px;
       font-size: 18px;
     }
   }
-}
-
-.button {
-  @include btn.button;
 }

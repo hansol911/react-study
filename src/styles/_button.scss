@@ -1,6 +1,6 @@
 $default-gap: 16px;
 
-@mixin button {
+@mixin button($type: default) {
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -14,11 +14,10 @@ $default-gap: 16px;
   text-decoration: none;
   cursor: pointer;
 
-  &.primary {
+  @if $type == primary {
     background-color: #228be6;
     color: #ffffff;
-  }
-  &.default {
+  } @else if $type == default {
     border-color: #ced4da;
     background-color: #ffffff;
     color: #000000;
