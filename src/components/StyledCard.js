@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
 
 const borderColor = " #dee2e6";
 const maxWidth = "360px";
@@ -113,29 +114,22 @@ const CardBox = styled.div`
   }
 `;
 
-const StyledCard = () => {
+const StyledCard = ({image, title, category, summary, link }) => {
   return (
     <CardBox className="card">
       <figure>
-        <img
-          src="https://googlefonts.github.io/korean/public/assets/og-img.png"
-          alt="Google Fonts + 한국어"
-        />
+        {image}
       </figure>
       <div className="title">
-        <h3>Google Fonts + 한국어</h3>
-        <span className="chip">OSS</span>
+        <h3>{title}</h3>
+        <span className="chip">{category}</span>
       </div>
-      <p className="summary">
-        좋은 타이포그래피를 통해 웹은 더욱 아름답고, 빠르며, 누구나 참여할 수 있는 공간이 될 수
-        있습니다. Google Fonts는 이 사이트에 수록된 오픈 소스 한글 폰트를 머신 러닝에 기반을 둔
-        최적화 기술을 통해 시범적으로 제공합니다.
-      </p>
+      <p className="summary">{summary}</p>
       <div className="footer">
         <Button
           as="a"
           variant="primary"
-          href="https://googlefonts.github.io/korean/"
+          href={link}
           className="btn-details"
           target="_blank"
           rel="noreferrer"
@@ -148,6 +142,14 @@ const StyledCard = () => {
       </div>
     </CardBox>
   );
+};
+
+StyledCard.propTypes = {
+  image: PropTypes.node,
+  title: PropTypes.string,
+  category: PropTypes.string,
+  summary: PropTypes.string,
+  link: PropTypes.string,
 };
 
 export default StyledCard;
