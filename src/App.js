@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import MaterialCard from "./components/MaterialCard";
 import StyledCard from "./components/StyledCard";
 
 const blueTheme = {
@@ -16,6 +17,7 @@ const orangeTheme = {
 
 const App = () => (
   <div>
+    <MaterialCard />
     <ThemeProvider theme={blueTheme}>
       <StyledCard />
     </ThemeProvider>
