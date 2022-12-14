@@ -1,5 +1,7 @@
+import { Chip, chipClasses } from "@mui/material";
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import MuiBoxList from "./components/MuiBoxList";
 import StyledCard from "./components/StyledCard";
 
 const blueTheme = {
@@ -10,6 +12,24 @@ const blueTheme = {
 
 const App = () => (
   <div>
+    <Chip
+      label="hansol"
+      variant="outlined"
+      color="success"
+      onDelete={() => {}}
+      sx={{
+        [`& .${chipClasses.label}`]: {
+          fontWeight: "bold",
+        },
+        [`& .${chipClasses.deleteIcon}`]: {
+          color: "error.main",
+          ":hover, : active": {
+            color: "error.dark",
+          },
+        },
+      }}
+    />
+    <MuiBoxList />
     <ThemeProvider theme={blueTheme}>
       <StyledCard
         image={
