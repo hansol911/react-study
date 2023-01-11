@@ -1,16 +1,10 @@
-import {
-  alpha,
-  Box,
-  Button,
-  capitalize,
-  Chip,
-  createTheme,
-  CssBaseline,
-  Stack,
-  ThemeProvider,
-} from "@mui/material";
+import { alpha, Chip, createTheme, CssBaseline, ThemeProvider, Typography } from "@mui/material";
 import React from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import MaterialCard from "./components/MaterialCard";
+import PaletteDisplay from "./components/PaletteDisplay";
+import ButtonsPage from "./pages/ButtonsPage";
+import HomePage from "./pages/HomePage";
 
 const muiTheme = createTheme({
   palette: {
@@ -101,17 +95,17 @@ muiTheme.typography.h6 = {
 const App = () => (
   <ThemeProvider theme={muiTheme}>
     <CssBaseline />
-    <Box p={4}>
-      <MaterialCard />
-      <Stack direction="row" gap={2} m={2}>
-        {["primary", "secondary", "error", "warning", "info", "success", "brand"].map(v => (
-          <Button variant="soft" key={v} color={v}>
-            {capitalize(v)}
-          </Button>
-        ))}
-      </Stack>
-      <Chip label="React Router" />
-    </Box>
+    <Routes>
+      <Route path="/" element={<HomePage />}>
+        <Route index element={<Typography variant="h3">Homepage</Typography>} />
+        <Route path="material-card" element={<MaterialCard />} />
+        <Route path="buttons" element={<ButtonsPage />}>
+          <Route path=":variant" element={<PaletteDisplay />} />
+        </Route>
+        <Route path="chip" element={<Chip label="React Router" />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   </ThemeProvider>
 );
 
