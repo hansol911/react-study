@@ -1,9 +1,10 @@
 import { alpha, Chip, createTheme, CssBaseline, ThemeProvider, Typography } from "@mui/material";
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import MaterialCard from "./components/MaterialCard";
+import CardDisplay from "./components/CardDisplay";
 import PaletteDisplay from "./components/PaletteDisplay";
 import ButtonsPage from "./pages/ButtonsPage";
+import CardsPage from "./pages/CardsPage";
 import HomePage from "./pages/HomePage";
 
 const muiTheme = createTheme({
@@ -98,7 +99,9 @@ const App = () => (
     <Routes>
       <Route path="/" element={<HomePage />}>
         <Route index element={<Typography variant="h3">Homepage</Typography>} />
-        <Route path="material-card" element={<MaterialCard />} />
+        <Route path="card" element={<CardsPage />}>
+          <Route path=":variant" element={<CardDisplay />} />
+        </Route>
         <Route path="buttons" element={<ButtonsPage />}>
           <Route path=":variant" element={<PaletteDisplay />} />
         </Route>

@@ -34,7 +34,7 @@ const HomePage = () => {
         <Box p={2}>
           <Link
             component={NavLink}
-            to="/material-card"
+            to="/card"
             sx={css`
               &.active {
                 color: #787878;
@@ -42,7 +42,7 @@ const HomePage = () => {
               }
             `}
           >
-            Material Card
+            Card
           </Link>
         </Box>
         <Box p={2}>

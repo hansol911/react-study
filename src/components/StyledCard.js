@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
-import styled, { css } from "styled-components";
+import styled, { css, ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 
 const borderColor = " #dee2e6";
@@ -114,33 +114,39 @@ const CardBox = styled.div`
   }
 `;
 
-const StyledCard = ({image, title, category, summary, link }) => {
+const blueTheme = {
+  colors: {
+    primary: "#228be6",
+  },
+};
+
+const StyledCard = ({ image, title, category, summary, link }) => {
   return (
-    <CardBox className="card">
-      <figure>
-        {image}
-      </figure>
-      <div className="title">
-        <h3>{title}</h3>
-        <span className="chip">{category}</span>
-      </div>
-      <p className="summary">{summary}</p>
-      <div className="footer">
-        <Button
-          as="a"
-          variant="primary"
-          href={link}
-          className="btn-details"
-          target="_blank"
-          rel="noreferrer"
-        >
-          자세히 보기
-        </Button>
-        <Button type="button" variant="defaul" className="btn-favorite" title="좋아요">
-          <AiOutlineHeart />
-        </Button>
-      </div>
-    </CardBox>
+    <ThemeProvider theme={blueTheme}>
+      <CardBox className="card">
+        <figure>{image}</figure>
+        <div className="title">
+          <h3>{title}</h3>
+          <span className="chip">{category}</span>
+        </div>
+        <p className="summary">{summary}</p>
+        <div className="footer">
+          <Button
+            as="a"
+            variant="primary"
+            href={link}
+            className="btn-details"
+            target="_blank"
+            rel="noreferrer"
+          >
+            자세히 보기
+          </Button>
+          <Button type="button" variant="defaul" className="btn-favorite" title="좋아요">
+            <AiOutlineHeart />
+          </Button>
+        </div>
+      </CardBox>
+    </ThemeProvider>
   );
 };
 
