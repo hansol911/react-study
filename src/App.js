@@ -6,6 +6,7 @@ import PaletteDisplay from "./components/PaletteDisplay";
 import ButtonsPage from "./pages/ButtonsPage";
 import CardsPage from "./pages/CardsPage";
 import HomePage from "./pages/HomePage";
+import Portfoilo from "./pages/Portfoilo";
 
 const muiTheme = createTheme({
   palette: {
@@ -108,6 +109,7 @@ const App = () => (
         <Route path="chip" element={<Chip label="React Router" />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
+      <Route path="/portfoilo" element={<Portfoilo />} />
     </Routes>
   </ThemeProvider>
 );
